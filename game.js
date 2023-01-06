@@ -17,6 +17,7 @@ var highScore;
 
 $(".start-button").click(function(){
   if(!started){
+    $(".start-button").text("Start")
     nextSequence();
     $("h1").text("Level "+ levels);
     started = true;} 
@@ -66,7 +67,8 @@ else{
   }, 200  )
 
 
-  $("h1").text("Game Over, Press Any Key to Restart");
+  $("h1").text("Game Over, Press Play Again to Restart");
+  $(".start-button").text("Play Again");
 
   startOver();
 }

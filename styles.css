@@ -22,8 +22,12 @@ body {
   width: 98vw;
 }
 
+.high-score{
+  font-size: 5rem;
+}
+
 .refresh{
-  font-size: 50px;
+  font-size: 5rem;
   font-weight: bolder;
  
   
@@ -33,7 +37,7 @@ body {
 
 
 .container {
-  display: block;
+  display: inline-block;
   width: 50%;
   margin: auto;
 
