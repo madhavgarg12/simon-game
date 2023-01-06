@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 body {
   text-align: center;
   background-color: #ecf0b2;
@@ -6,8 +11,30 @@ body {
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 2rem;
-  margin:  2%;
+  margin: 50px 0 20px ;
+  
   color: #000000;
+}
+
+.functions{
+  display: flex;
+  justify-content: space-between;
+  width: 98vw;
+}
+
+.refresh{
+  font-size: 50px;
+  font-weight: bolder;
+ 
+  
+  
+  
+}
+
+.high-score{
+  
+
+  
 }
 
 .container {

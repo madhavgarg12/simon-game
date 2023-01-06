@@ -1,48 +1,43 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Simon</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet"
+    />
 
-<head>
-  <meta charset="utf-8">
-  <title>Simon</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-  <style>
- 
-  </style>
-</head>
+    <style></style>
+  </head>
 
-<body>
-  <h1 id="level-title">Press button to start</h1>
-  <div id="container">
-    
+  <body>
+    <div class="functions">
+      <div class="high-score"><p>High Score : <span id="highlevel">0</span></h1></div>
+      <i class="bi bi-arrow-clockwise refresh"></i>
+    </div>
+    <div id="container">
+      <h1 id="level-title">Press button to start</h1>
 
-    <div class="row">
+      <div class="row">
+        <div type="button" id="green" class="btn green"></div>
 
-      <div type="button" id="green" class="btn green">
-
+        <div type="button" id="red" class="btn red"></div>
       </div>
 
-      <div type="button" id="red" class="btn red">
-
+      <div class="row">
+        <div type="button" id="yellow" class="btn yellow"></div>
+        <div type="button" id="blue" class="btn blue"></div>
       </div>
     </div>
-    
-    <div class="row">
-      
-      <div type="button" id="yellow" class="btn yellow">
-        
-      </div>
-      <div type="button" id="blue" class="btn blue">
-        
-      </div>
-      
-    </div>
-    
-  </div>
-  <button class="start-button">Start</button>
+    <button class="start-button">Start</button>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="/game.js"></script>
-</body>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="/game.js"></script>
+  </body>
 </html>

@@ -9,6 +9,8 @@ var userClickedPattern = [];
 var startingTitle = $("h1").text();
 var started = false;
 var levels = 0;
+var highScore;
+
 
 
 // Detect press "A"
@@ -72,6 +74,20 @@ else{
 
 }
 
+// refresh
+
+$(".refresh").click(function(){
+  location.reload(true)
+});
+
+
+
+
+
+
+
+
+
 // Sequence function
 
 function nextSequence(){
@@ -80,6 +96,17 @@ function nextSequence(){
   gamePattern.push(randomChosenColour);
   levels++ ;
   $("#level-title").text("Level " + levels);  
+  
+  // high score
+  highScore = levels
+  var highlevelset = Number($("#highlevel").text())
+
+  if( highlevelset <= highScore ){
+  $("#highlevel").text(
+    highScore
+  );
+ }
+
   
   
   $("#"+randomChosenColour).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
@@ -138,6 +165,9 @@ function startOver(){
   started = false;
   userClickedPattern = [];
 }
+
+
+
 
 
 
