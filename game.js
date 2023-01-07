@@ -19,7 +19,7 @@ $(".start-button").click(function(){
   if(!started){
     $(".start-button").text("Start")
     nextSequence();
-    $("h1").text("Level "+ levels);
+    $("level-title").text("Level "+ levels);
     started = true;} 
   });
   // user pressed button 
@@ -79,7 +79,8 @@ else{
 // refresh
 
 $(".refresh").click(function(){
-  location.reload(true)
+  startOver();
+  $(".start-button").click();
 });
 
 
