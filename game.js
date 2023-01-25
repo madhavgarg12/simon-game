@@ -18,9 +18,14 @@ var highScore;
 $(".start-button").click(function(){
   if(!started){
     $(".start-button").text("Start")
+    
     nextSequence();
     $("level-title").text("Level "+ levels);
     started = true;} 
+   
+      
+
+    
   });
   // user pressed button 
   
@@ -67,29 +72,15 @@ else{
   }, 200  )
 
 
-  $("h1").text("Game Over, Press Play Again to Restart");
+  $(".level-title").text("Game Over, Press Play Again to Restart");
   $(".start-button").text("Play Again");
 
   startOver();
 }
 
 
+
 }
-
-// refresh
-
-$(".refresh").click(function(){
-  startOver();
-  $(".start-button").click();
-});
-
-
-
-
-
-
-
-
 
 // Sequence function
 
@@ -104,11 +95,7 @@ function nextSequence(){
   highScore = levels
   var highlevelset = Number($("#highlevel").text())
 
-  if( highlevelset <= highScore ){
-  $("#highlevel").text(
-    highScore
-  );
- }
+ 
 
   
   
@@ -139,7 +126,7 @@ function nextSequence(){
 }
  else if( name == "yellow"){
    yellow.play();
-}
+  }
 else;
 
 }
@@ -152,13 +139,14 @@ function animatePress(currentColour){
 
   setTimeout(function(){
     $("#"+currentColour).removeClass("pressed"),100})
-
+    
   }
 
 
 
 
 
+  
 
 // restart
 
@@ -168,6 +156,36 @@ function startOver(){
   started = false;
   userClickedPattern = [];
 }
+
+
+// dark mode
+
+$(document).ready(function () {
+  $("#tooglenight").change(function () {
+    if (this.checked) {
+     
+      $(".box").addClass("night-border");
+      $(".stats").addClass("night-title");
+      $("#level-title").addClass("night-title");
+      $("nav").addClass("night-nav");
+      $("body").addClass("night");
+      $("i").css("color", "white");
+    } else {
+      $("body").removeClass("night");
+      
+      $("#level-title").removeClass("night-title");
+        $(".stats").removeClass("night-title");
+        $("nav").removeClass("night-nav");
+      $(".box").removeClass("night-border");
+      $("i").css("color", "black");
+    }
+  });
+});
+
+
+// welcome message
+
+console.log("Welcome to Tic Tac Toe");
 
 
 
