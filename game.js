@@ -72,7 +72,7 @@ else{
   }, 200  )
 
 
-  $(".level-title").text("Game Over, Press Play Again to Restart");
+  $("#level-title").text("Game Over, Press Play Again to Restart");
   $(".start-button").text("Play Again");
 
   startOver();
