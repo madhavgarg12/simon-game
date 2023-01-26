@@ -9,8 +9,44 @@ var userClickedPattern = [];
 var startingTitle = $("h1").text();
 var started = false;
 var levels = 0;
-var highScore;
+var highScore ;
+$(".high-score").text("High Score : " + localStorage.getItem("topScore"))
+if($(".high-score").text() === 'High Score : null'){
+  $(".high-score").text("High Score : 0")
+}
 
+
+
+
+
+
+// Sequence function
+
+function nextSequence(){
+  var randomnumber = Math.floor( Math.random() * 4);
+  var randomChosenColour = buttonColours[randomnumber];
+  gamePattern.push(randomChosenColour);
+  levels++ ;
+  $("#level-title").text("Level " + levels);
+  if (highScore === undefined || highScore === null){
+    highScore = localStorage.getItem("topScore");
+    
+  }
+
+  if(levels >= highScore){
+    highScore = levels;
+    localStorage.setItem("topScore", highScore);
+  }
+  
+  $(".high-score").text("High Score : " + localStorage.getItem("topScore"))
+
+
+  $("#"+randomChosenColour).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+  playSound(randomChosenColour);
+
+  
+  
+}
 
 
 // Detect press "A"
@@ -21,7 +57,8 @@ $(".start-button").click(function(){
     
     nextSequence();
     $("level-title").text("Level "+ levels);
-    started = true;} 
+    started = true;
+  } 
    
       
 
@@ -72,7 +109,7 @@ else{
   }, 200  )
 
 
-  $("#level-title").text("Game Over");
+  $(".level-title").text("Game Over, Press Play Again to Restart");
   $(".start-button").text("Play Again");
 
   startOver();
@@ -82,29 +119,6 @@ else{
 
 }
 
-// Sequence function
-
-function nextSequence(){
-  var randomnumber = Math.floor( Math.random() * 4);
-  var randomChosenColour = buttonColours[randomnumber];
-  gamePattern.push(randomChosenColour);
-  levels++ ;
-  $("#level-title").text("Level " + levels);  
-  
-  // high score
-  highScore = levels
-  var highlevelset = Number($("#highlevel").text())
-
- 
-
-  
-  
-  $("#"+randomChosenColour).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
-  playSound(randomChosenColour);
-
-  
-  
-}
 
 // audio
 

@@ -65,7 +65,7 @@ nav li {
   transform: scale(1.15, 0.85);
 }
 .cbx:checked ~ label {
-  background: #ffbc04;
+  background: #f0be09;
 }
 .cbx:checked ~ label:after {
   left: 20px;
@@ -90,11 +90,11 @@ nav li {
 
  .stats{
 
-  padding: 10px;
+  padding:  5px;
   font-size: 1.2rem;
   font-family: "Baloo Bhaina 2", cursive;
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
   color: black;
   font-weight: 500;
@@ -109,7 +109,8 @@ nav li {
   text-align: center;
   font-family: sans-serif;
   justify-content: center;
-  margin: 40px;
+  margin: 30px;
+  margin-top: 40px;
 }
 /* game container start  */
 .game-container {
@@ -118,13 +119,6 @@ nav li {
   grid-template-columns: repeat(2, 20vh);
   grid-template-rows: repeat(2, 20vh);
 }
-
-#level-title{
-  /* font-size: 1.rem; */
-
-  
-}
-
 
 
 
@@ -139,15 +133,6 @@ nav li {
   font-size: 2.2em;
   background: none;
 }
-
-
-
-
-
-
-
-
-
 
 /* game container end  */
 
